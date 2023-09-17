@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Special Discount Coupon Generator</title>
+</head>
+<body>
+    <h1>Special Discount Coupon Generator</h1>
+    <!-- Add your logo with the <img> tag -->
+    <img src="logo.png" alt="Your Logo" width="100" height="100">
+    <p id="couponMessage">Click the button to reveal your special discount:</p>
+    <button id="generateButton">Generate Discount</button>
+    <p id="randomNumber" style="font-weight: bold;"></p>
+
+    <script>
+        // Function to generate a 4-digit random number with "ASHVINI" prefix
+        function generateDiscountCoupon() {
+            const min = 1000; // Minimum 4-digit number
+            const max = 9999; // Maximum 4-digit number
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            const prefix = "ASHVINI";
+            const couponMessage = `Congrats! You have availed a special discount. Use this coupon code: ${prefix}${randomNumber}`;
+            document.getElementById("couponMessage").textContent = couponMessage;
+            document.getElementById("randomNumber").textContent = '';
+        }
+
+        // Attach the function to the button click event
+        document.getElementById("generateButton").addEventListener("click", generateDiscountCoupon);
+
+        // Initial message when the page loads
+        document.getElementById("couponMessage").textContent = "Click the button to reveal your special discount:";
+    </script>
+</body>
+</html>
